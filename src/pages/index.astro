@@ -4,8 +4,7 @@ import Layout from '../layouts/Layout.astro';
 const profile = {
 	name: 'Mahboubeh (Mahi) Ramezani',
 	title: 'M.A. Iranian Studies Student',
-	address: 'Oberlandstrasse 97, 12099 Berlin',
-	phone: '+49 175 1500169',
+	address: 'Berlin, Germany',
 	email: 'mahbouber91@zedat.fu-berlin.de',
 	summary:
 		'I am an Iranian Studies student with experience in guest services, customer service, language teaching, translation, and intercultural communication. My background combines academic training, hospitality experience, and strong language skills.',
@@ -104,10 +103,6 @@ const languages = [
 					<div>
 						<dt>Address</dt>
 						<dd>{profile.address}</dd>
-					</div>
-					<div>
-						<dt>Phone</dt>
-						<dd><a href={`tel:${profile.phone.replaceAll(' ', '')}`}>{profile.phone}</a></dd>
 					</div>
 					<div>
 						<dt>Email</dt>
