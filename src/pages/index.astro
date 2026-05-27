@@ -2,43 +2,89 @@
 import Layout from '../layouts/Layout.astro';
 
 const profile = {
-	name: 'Mahi',
-	title: 'Digital Humanities Student',
-	location: 'Germany',
-	email: 'your.email@example.com',
+	name: 'Mahboubeh (Mahi) Ramezani',
+	title: 'M.A. Iranian Studies Student',
+	address: 'Oberlandstrasse 97, 12099 Berlin',
+	phone: '+49 175 1500169',
+	email: 'mahbouber91@zedat.fu-berlin.de',
 	summary:
-		'I am interested in digital humanities, cultural heritage, historical texts, and the use of web technologies to present research in accessible and thoughtful ways.',
+		'I am an Iranian Studies student with experience in guest services, customer service, language teaching, translation, and intercultural communication. My background combines academic training, hospitality experience, and strong language skills.',
 };
 
 const education = [
 	{
-		degree: 'Your Degree or Program',
-		place: 'Your University',
-		period: 'Year - Year',
-		detail: 'Add your field of study, thesis topic, or academic focus here.',
+		degree: 'M.A. Iranian Studies',
+		place: 'Freie Universitat Berlin',
+		period: 'Since 10/2025',
+		detail: 'Current graduate study in Iranian Studies.',
+	},
+	{
+		degree: 'German Language Certificates A1-C1',
+		place: 'telc, Berlin',
+		period: '2022-2025',
+		detail: 'German language certification from beginner to advanced level.',
+	},
+	{
+		degree: 'English-Language Certificate in Tourism and Guest Services',
+		place: 'Mashhad, Iran',
+		period: '2015',
+		detail: 'Training focused on tourism, guest support, and service communication.',
+	},
+	{
+		degree: 'Teacher Training Course (TTC)',
+		place: 'Mashhad, Iran',
+		period: '08/2014',
+		detail: 'Teacher training for English language instruction.',
+	},
+	{
+		degree: 'B.A. English Language and Literature',
+		place: 'State University of Neyshabur, Iran',
+		period: '2010-2014',
+		detail: 'Undergraduate study in English language and literature.',
+	},
+	{
+		degree: 'High School Diploma',
+		place: 'Mathematics and Physics Track',
+		period: '2008',
+		detail: 'Secondary education with a focus on mathematics and physics.',
 	},
 ];
 
-const interests = [
-	'Digital humanities',
-	'Iranian cultural heritage',
-	'Historical texts and inscriptions',
-	'Web-based research presentation',
+const experience = [
+	{
+		role: 'Guest Service Employee',
+		place: 'Hotel Adlon / Estrel Hotel / Olympiastadion, Berlin',
+		period: '2023-2024',
+	},
+	{
+		role: 'Customer Service Employee',
+		place: 'Ata Airline, Mashhad Airport, Iran',
+		period: '2020-2021',
+	},
+	{
+		role: 'English Instructor and Translator',
+		place: 'Bayan English Language Institute, Mashhad, Iran',
+		period: '2015-2020',
+	},
+	{
+		role: 'Hotel Assistant',
+		place: 'Darvishi Hotel, Mashhad, Iran',
+		period: '2014-2017',
+	},
 ];
 
-const skills = ['HTML', 'CSS', 'Astro', 'Research', 'Academic writing', 'Digital archiving'];
+const skills = [
+	'Organizational skills',
+	'Strong communication and presentation skills',
+	'Intercultural competence and sensitivity',
+	'Good MS Office skills: Word, Excel, PowerPoint',
+];
 
-const projects = [
-	{
-		name: 'Digital Archive of Persian Inscriptions',
-		detail:
-			'A web project about preserving and presenting the history, language, and cultural significance of Persian inscriptions.',
-	},
-	{
-		name: 'Research Portfolio',
-		detail:
-			'A personal academic space for sharing research interests, projects, and CV information.',
-	},
+const languages = [
+	'German - C1 (telc certificate)',
+	'English - C1',
+	'Arabic - Basic knowledge',
+	'Persian - Native language',
 ];
 ---
 
@@ -52,7 +98,8 @@ const projects = [
 				<p class="summary">{profile.summary}</p>
 			</div>
 			<aside class="contact-panel" aria-label="Contact information">
-				<p>{profile.location}</p>
+				<p>{profile.address}</p>
+				<a href={`tel:${profile.phone.replaceAll(' ', '')}`}>{profile.phone}</a>
 				<a href={`mailto:${profile.email}`}>{profile.email}</a>
 				<a href="/my-cv-webpage-info.txt">CV source notes</a>
 			</aside>
@@ -73,11 +120,12 @@ const projects = [
 				</section>
 
 				<section class="section-block">
-					<h2>Projects</h2>
-					{projects.map((project) => (
+					<h2>Professional Experience</h2>
+					{experience.map((job) => (
 						<article class="project-item">
-							<h3>{project.name}</h3>
-							<p>{project.detail}</p>
+							<p class="period">{job.period}</p>
+							<h3>{job.role}</h3>
+							<p>{job.place}</p>
 						</article>
 					))}
 				</section>
@@ -85,16 +133,16 @@ const projects = [
 
 			<aside class="side-column">
 				<section class="section-block">
-					<h2>Research Interests</h2>
-					<ul class="tag-list">
-						{interests.map((interest) => <li>{interest}</li>)}
+					<h2>Skills</h2>
+					<ul class="tag-list compact">
+						{skills.map((skill) => <li>{skill}</li>)}
 					</ul>
 				</section>
 
 				<section class="section-block">
-					<h2>Skills</h2>
+					<h2>Languages</h2>
 					<ul class="tag-list compact">
-						{skills.map((skill) => <li>{skill}</li>)}
+						{languages.map((language) => <li>{language}</li>)}
 					</ul>
 				</section>
 			</aside>
